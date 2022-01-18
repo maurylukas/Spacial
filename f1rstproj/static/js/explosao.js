@@ -14,7 +14,7 @@ function Explosao ()
     {
         
     };
-    this.imagem.src = 'img/explosao.png';
+    this.imagem.src = 'static/img/explosao.png';
     this.desenhar = function ()
     {
         contexto.drawImage (this.imagem, this.origemX, this.origemY, this.tamanhoOrigem, this.tamanhoOrigem, this.destinoX, this.destinoY, this.tamanhoDestino, this.tamanhoDestino);

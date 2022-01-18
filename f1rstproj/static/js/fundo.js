@@ -19,13 +19,13 @@ function Fundo ()
     {
         if (Math.random () <= 1 / 2)
         {
-            this.imagem1.src = 'img/espaco2.png';
-            this.imagem2.src = 'img/espaco4.png';
+            this.imagem1.src = 'static/img/espaco2.png';
+            this.imagem2.src = 'static/img/espaco4.png';
         }
         else
         {
-            this.imagem1.src = 'img/espaco1.png';
-            this.imagem2.src = 'img/espaco3.png';
+            this.imagem1.src = 'static/img/espaco1.png';
+            this.imagem2.src = 'static/img/espaco3.png';
         }
     };
     this.desenhar = function ()

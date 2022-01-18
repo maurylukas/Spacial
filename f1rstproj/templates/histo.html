@@ -6,26 +6,26 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <link rel = "stylesheet" type = "text/css" href = "css/geral.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "static/css/geral.css"/>
         <title>História</title>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0">
     </head>
-    <body style = "background-image: url('img/galaxia3.jpg');" onload = "histo ()">
-        <audio id = "som" preload = "auto" onended = "location ('Menu.html')">
-            <source src = "sg/switch2.mp3" type = "audio/mpeg"/>
+    <body style = "background-image: url('static/img/galaxia3.jpg');" onload = "histo ()">
+        <audio id = "som" preload = "auto" onended = "location.assign ('principal')">
+            <source src = "static/sg/switch2.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
             <h2 id = "t1"></h2>
             <br/>
             <h3>
-                <img src = "img/esq.png" alt = "herculeans" height = "100" width = "100" style = "vertical-align: top;"/>
+                <img src = "static/img/esq.png" alt = "herculeans" height = "100" width = "100" style = "vertical-align: top;"/>
                 <span id = "p1" style = "text-align: left; display: inline-table;"></span>
             </h3>
             <br/>
             <h3>
                 <span id = "p2" style = "text-align: right; display: inline-table;"></span>
-                <img src = "img/alien.png" alt = "meta-lureans" height = "76" width = "150" style = "vertical-align: top;"/>
+                <img src = "static/img/alien.png" alt = "meta-lureans" height = "76" width = "150" style = "vertical-align: top;"/>
             </h3>
             <br/>
             <p></p>

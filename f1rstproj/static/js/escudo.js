@@ -12,7 +12,7 @@ function Escudo ()
     {
         
     };
-    this.imagem.src = 'img/bola_azul_aqua.png';
+    this.imagem.src = 'static/img/bola_azul_aqua.png';
     this.desenhar = function ()
     {
         contexto.drawImage (this.imagem, this.posicaoX, this.posicaoY, this.tamanho, this.tamanho);

@@ -14,7 +14,7 @@ function Tiro ()
     {
         
     };
-    this.imagem.src = 'img/tiro2.png';
+    this.imagem.src = 'static/img/tiro2.png';
     this.atirar = function ()
     {
         this.tiro = true;

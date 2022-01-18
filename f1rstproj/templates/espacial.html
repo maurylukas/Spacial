@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type = "text/javascript" src = "js/fundo.js"></script>
-        <script type = "text/javascript" src = "js/nave.js"></script>
-        <script type = "text/javascript" src = "js/astro.js"></script>
-        <script type = "text/javascript" src = "js/tiro.js"></script>
-        <script type = "text/javascript" src = "js/explosao.js"></script>
-        <script type = "text/javascript" src = "js/vida.js"></script>
-        <script type = "text/javascript" src = "js/escudo.js"></script>
-        <link rel = "stylesheet" type = "text/css" href = "css/geral.css"/>
+        <script type = "text/javascript" src = "static/js/fundo.js"></script>
+        <script type = "text/javascript" src = "static/js/nave.js"></script>
+        <script type = "text/javascript" src = "static/js/astro.js"></script>
+        <script type = "text/javascript" src = "static/js/tiro.js"></script>
+        <script type = "text/javascript" src = "static/js/explosao.js"></script>
+        <script type = "text/javascript" src = "static/js/vida.js"></script>
+        <script type = "text/javascript" src = "static/js/escudo.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "static/css/geral.css"/>
         <title>Espacial</title>
         <meta charset = "UTF-8"/>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0"/>
     </head>
-    <body style = "background-image: url('img/galaxia2.jpg');">
+    <body style = "background-image: url('static/img/galaxia2.jpg');">
         <audio id = "musica" loop = "loop" preload = "auto">
-            <source src = "sg/StarTrek.mp3" type = "audio/mpeg"/>
+            <source src = "static/sg/StarTrek.mp3" type = "audio/mpeg"/>
         </audio>
         <audio id = "bum" preload = "auto">
-            <source src = "sg/explosao.mp3" type = "audio/mpeg"/>
+            <source src = "static/sg/explosao.mp3" type = "audio/mpeg"/>
         </audio>
         <audio id = "som" preload = "auto">
-            <source src = "sg/tiro.mp3" type = "audio/mpeg"/>
+            <source src = "static/sg/tiro.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
             <br/>
             <canvas id = "tela" style = "border: 1px solid #FFFF00;">Sem suporte a HTML5</canvas>
             <br/>
             <button id = "botao" type = "button" onclick = "pausa ()" autofocus> Play </button>
-            <button type = "button" onclick = "location ('Menu.html')"> Exit </button>
+            <button type = "button" onclick = "location.assign ('principal')"> Exit </button>
             <p>Autor: Maury Lukas</p>
         </center>
         <script>
@@ -90,7 +90,7 @@
             {
 
             };
-            imagemOver.src = 'img/Game_Over.png';
+            imagemOver.src = 'static/img/Game_Over.png';
 
             document.addEventListener ('keydown', function (pressiona)
             {

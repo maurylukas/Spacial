@@ -17,7 +17,7 @@ function Astro ()
     {
         
     };
-    this.imagem.src = 'img/asteroides.png';
+    this.imagem.src = 'static/img/asteroides.png';
     this.desenhar = function ()
     {
         contexto.drawImage (this.imagem, this.origemX, this.origemY, this.tamanhoOrigem, this.tamanhoOrigem, this.destinoX, this.destinoY, this.tamanhoDestino, this.tamanhoDestino);

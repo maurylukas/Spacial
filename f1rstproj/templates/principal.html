@@ -6,42 +6,42 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <link rel = "stylesheet" type = "text/css" href = "css/geral.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "static/css/geral.css"/>
         <title>Menu</title>
         <meta charset = "UTF-8"/>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0"/>
     </head>
-    <body style = "background-image: url('img/galaxia4.jpg');" onload = "menu ()">
+    <body style = "background-image: url('static/img/galaxia4.jpg');" onload = "menu ()">
         <audio id = "som" preload = "auto">
-            <source src = "sg/switch1.mp3" type = "audio/mpeg"/>
+            <source src = "static/sg/switch1.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
             <h1>ESPACIAL</h1>
             <br/>
             <button type = "button" onclick = "novo ()">
-                <img src = "img/alien.png" alt = "New Game" height = "102" width = "200" style = "vertical-align: middle;"/>
+                <img src = "static/img/alien.png" alt = "New Game" height = "102" width = "200" style = "vertical-align: middle;"/>
                 <br/>
                 <b id = "p1"></b>
             </button>
             <p></p>
             <button type = "button" onclick = "como ()">
-                <img src = "img/controle.jpg" alt = "How to Play" height = "95" width = "140" style = "vertical-align: middle;"/>
+                <img src = "static/img/controle.jpg" alt = "How to Play" height = "95" width = "140" style = "vertical-align: middle;"/>
                 <br/>
                 <b id = "p2"></b>
             </button>
             <button type = "button" onclick = "saber ()">
-                <img src = "img/livro.png" alt = "Knowing More" height = "96" width = "123" style = "vertical-align: middle;"/>
+                <img src = "static/img/livro.png" alt = "Knowing More" height = "96" width = "123" style = "vertical-align: middle;"/>
                 <br/>
                 <b id = "p3"></b>
             </button>
             <p></p>
             <button type = "button" onclick = "quem ()">
-                <img src = "img/nerd.png" alt = "Credits" height = "141" width = "132" style = "vertical-align: middle;"/>
+                <img src = "static/img/nerd.png" alt = "Credits" height = "141" width = "132" style = "vertical-align: middle;"/>
                 <br/>
                 <b id = "p4"></b>
             </button>
             <button type = "button" onclick = "voltar ()">
-                <img src = "img/idioma.png" alt = "Change Language" height = "140" width = "140" style = "vertical-align: middle;"/>
+                <img src = "static/img/idioma.png" alt = "Change Language" height = "140" width = "140" style = "vertical-align: middle;"/>
                 <br/>
                 <b id = "p5"></b>
             </button>
@@ -137,27 +137,27 @@ and open the template in the editor.
             function novo ()
             {
                 document.getElementById ('som').play ();
-                document.getElementById ('som').onended = function () {location ('Intro.html');};
+                document.getElementById ('som').onended = function () {location.assign ('intro');};
             }
             function como ()
             {
                 document.getElementById ('som').play ();
-                document.getElementById ('som').onended = function () {location ('Instru.html');};
+                document.getElementById ('som').onended = function () {location.assign ('instru');};
             }
             function saber ()
             {
                 document.getElementById ('som').play ();
-                document.getElementById ('som').onended = function () {location ('Histo.html');};
+                document.getElementById ('som').onended = function () {location.assign ('histo');};
             }
             function quem ()
             {
                 document.getElementById ('som').play ();
-                document.getElementById ('som').onended = function () {location ('Creditos.html');};
+                document.getElementById ('som').onended = function () {location.assign ('creditos');};
             }
             function voltar ()
             {
                 document.getElementById ('som').play ();
-                document.getElementById ('som').onended = function () {location ('index.html');};
+                document.getElementById ('som').onended = function () {location.assign ('/');};
             }
         </script>
     </body>

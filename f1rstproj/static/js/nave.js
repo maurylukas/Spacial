@@ -25,8 +25,8 @@ function Nave ()
     {
         
     };
-    this.imagem1.src = 'img/alien.png';
-    this.imagem2.src = 'img/escudo.png';
+    this.imagem1.src = 'static/img/alien.png';
+    this.imagem2.src = 'static/img/escudo.png';
     this.desenhar = function ()
     {
         if (this.protecao)

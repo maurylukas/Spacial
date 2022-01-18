@@ -14,7 +14,7 @@ function Vida ()
     {
         
     };
-    this.imagem.src = 'img/gloss.png';
+    this.imagem.src = 'static/img/gloss.png';
     this.desenhar = function ()
     {
         contexto.drawImage (this.imagem, this.posicaoX, this.posicaoY, this.largura, this.altura);
