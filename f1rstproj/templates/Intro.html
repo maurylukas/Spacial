@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "css/especial.css"/>
+        <title>Introdução</title>
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0"/>
+    </head>
+    <body onload = "intro ()">
+        <!--
+        <p id="start">A short time ago in a browser very, very close&hellip;</p>
+        
+        <h1>STAR WARS<sub>titles in CSS3</sub></h1>
+        -->
+        <audio id = "musica" loop = "loop" preload = "auto" autoplay = "autoplay">
+            <source src = "sg/StarWars.mp3" type = "audio/mpeg"/>
+        </audio>
+        <audio id = "som" preload = "auto" onended = "location ('Espacial.html')">
+            <source src = "sg/switch2.mp3" type = "audio/mpeg"/>
+        </audio>
+        <div id = "titles">
+            <div id = "titlecontent">
+                                
+                <p class = "center">ESPACIAL</p>
+                                
+                <p id = "p1"></p>
+                
+                <p id = "p2"></p>
+                
+                <!--
+                <p class="center">View the source, Luke!</p>
+                
+                <p class="center"><a href="http://www.sitepoint.com/css3-starwars-scrolling-text/">sitepoint.com/<br />css3-starwars-scrolling-text/</a></p>
+                -->
+                
+                <p id = "p3"></p>
+                
+                <p id = "p4"></p>
+                
+                <p id = "p5"></p>
+                
+                <p id = "p6"></p>
+                
+                <p id = "p7"></p>
+                
+            </div>
+        </div>
+        <center>
+            <button type = "button" id = "b1"  onclick = "document.getElementById ('som').play ()"></button>
+        </center>
+        <script>
+            function intro ()
+            {
+                switch (window.name)
+                {
+                    default:
+                        document.getElementById('p1').innerHTML = 'Em um mesmo sistema planetário, havia dois mundos habitados, cada um com uma espécie dominante inteligente, tão diferentes entre si, que várias guerras já travaram.';
+                        document.getElementById('p2').innerHTML = 'Após séculos de lutas, perceberam que uma espécie deveria partir para sempre, e uma última batalha decidiria quem.';
+                        document.getElementById('p3').innerHTML = 'No entanto, ambos os lados, cansados de tantos já mortos, escolheram apenas um campeão dentre eles para se enfrentarem até a morte!';
+                        document.getElementById('p4').innerHTML = 'A civilização do perdedor iria embora do sistema para nunca mais voltar.';
+                        document.getElementById('p5').innerHTML = 'Assim sendo, Sélix, o campeão dos Meta-Lureanos, parte para confrontar o campeão dos Herculeanos, Borgus, em um planeta neutro.';
+                        document.getElementById('p6').innerHTML = 'O caminho para lá é repleto de rochas remanescentes de mundos destruídos pelas guerras anteriores entre os dois povos.';
+                        document.getElementById('p7').innerHTML = 'E este é só o primeiro desafio pelo qual nosso herói terá que passar para poder prevalecer.';
+                        document.getElementById('b1').innerHTML = 'Pular Introdução';
+                        break;
+                    case 'ingles':
+                        document.getElementById('p1').innerHTML = 'In one planetary system, there were two worlds inhabited by a different dominant intelligent species each, so unlike one another, many wars have they waged.';
+                        document.getElementById('p2').innerHTML = 'After fighting for centuries, they realized one species should leave for good, and one last battle would decide who.';
+                        document.getElementById('p3').innerHTML = "However, both sides couldn't stand so many more kills, so they chose only one champion among them to fight each other to the death!";
+                        document.getElementById('p4').innerHTML = "Loser's civilization would leave the system to never return.";
+                        document.getElementById('p5').innerHTML = "Therefore, Selix, Meta-Lureans' champion, flies to face Herculeans' champion, Borgus, on a neutral planet.";
+                        document.getElementById('p6').innerHTML = "Lots of destroyed worlds' remaining rocks due to previous wars between the two peoples pave the way up there.";
+                        document.getElementById('p7').innerHTML = 'And that is just the first challenge through which our hero must pass in order to prevail.';
+                        document.getElementById('b1').innerHTML = 'Skip Introduction';
+                        break;
+                    case 'alemao':
+                        document.getElementById('p1').innerHTML = 'In einem Planetensystem gab es zwei Welten, die jeweils von einer anderen dominanten intelligenten Spezies bewohnt wurden, so verschieden voneinander, viele Kriege haben sie geführt.';
+                        document.getElementById('p2').innerHTML = 'Nach Jahrhunderten der Kämpfe haben sie realisiert, dass eine Spezies für immer verlassen sollte, und eine letzte Schlacht würde entscheiden, wer.';
+                        document.getElementById('p3').innerHTML = 'Jedoch könnten beide Seiten nicht so viele weitere Todesfälle ausstehen, also haben sie nur einen Champion unter ihnen gewählt, damit sie gegenseitig bis zum Tod konfrontieren!';
+                        document.getElementById('p4').innerHTML = '';
+                        document.getElementById('p5').innerHTML = '';
+                        document.getElementById('p6').innerHTML = '';
+                        document.getElementById('p7').innerHTML = '';
+                        document.getElementById('b1').innerHTML = 'Überspringen Einführung';
+                        break;
+                    case 'italiano':
+                        document.getElementById('p1').innerHTML = "In un stesso sistema planetario, c'erano due mondi abitati, ognuno con una specie dominante intelligente, così diverse, che avevano combattuto diverse guerre.";
+                        document.getElementById('p2').innerHTML = 'Dopo secoli di lotte, si sono resi conto che una specie dovrebbero lasciare per sempre, ed una battaglia finale deciderebbe chi.';
+                        document.getElementById('p3').innerHTML = 'Tuttavia, di due parti, stanchi di tante morti, hanno scelto solo un campione tra loro per si combattere fino alla morte!';
+                        document.getElementById('p4').innerHTML = 'La civiltà del perdente lascerebbe il sistema e non tornare mai più.';
+                        document.getElementById('p5').innerHTML = 'Pertanto, Sèlix, il campione dei Meta-Lureani, vola per affrontare il campione degli Ercoleani, Borgus, in un pianeta neutrale.';
+                        document.getElementById('p6').innerHTML = 'Il cammino per lì è pieno di rocce rimanenti di mondi distrutti dalle guerre precedenti fra i due popoli.';
+                        document.getElementById('p7').innerHTML = 'E questo è solo la prima sfida per cui il nostro eroe dovrà passare per poter prevalere.';
+                        document.getElementById('b1').innerHTML = 'Saltare Introduzione';
+                        break;
+                    case 'espanhol':
+                        document.getElementById('p1').innerHTML = 'En un mismo sistema planetario, había dos mundos habitados, cada uno con una especie dominante inteligente, tan diferentes entre si, que muchas guerras han ya luchado.';
+                        document.getElementById('p2').innerHTML = 'Después de siglos de lucha, se dieron cuenta de que una especie debería partir para siempre, y una última batalla decidiría quién.';
+                        document.getElementById('p3').innerHTML = 'Sin embargo, las dos partes, cansadas de tantos ya muertos, han elegido sólo un campeón entre ellos para enfrentarse entre sí hasta la muerte!';
+                        document.getElementById('p4').innerHTML = 'La civilización del perdedor dejaría el sistema para no retornar jamás.';
+                        document.getElementById('p5').innerHTML = 'Siendo así, Sélix, el campeón de los Meta-Lureanos, parte a enfrentar el campeón de los Herculeanos, Borgus, en un planeta neutral.';
+                        document.getElementById('p6').innerHTML = 'El camino hasta allá es lleno de rocas restantes de los mundos destruidos por guerras anteriores entre los dos pueblos.';
+                        document.getElementById('p7').innerHTML = 'Y este es sólo el primer desafío por el cual nuestro héroe tendrá que pasar para poder prevalecer.';
+                        document.getElementById('b1').innerHTML = 'Saltar Introducción';
+                        break;
+                    case 'frances':
+                        document.getElementById('p1').innerHTML = "Dans le même système planétaire, il y avait deux mondes habités, chacun avec une espèce dominant intelligent, tellement différent l'un d'autre, que plusieurs guerres ils ont combattu.";
+                        document.getElementById('p2').innerHTML = "Après des siècles de lutte, ils ont réalisé qu'une espèce devrait partir pour toujours, et une dernière bataille déciderait qui.";
+                        document.getElementById('p3').innerHTML = "Cependant, les deux parties, fatigués de tant de morts, ont choisi seulement un champion parmi eux pour faire la bataille jusqu'à la mort!";
+                        document.getElementById('p4').innerHTML = 'La civilisation de perdant quitterait le système pour ne jamais retourner.';
+                        document.getElementById('p5').innerHTML = 'Par conséquent, Sélix, le champion de les Méta-Luréens, vole pour affronter le champion de les Herculéens, Borgus, sur une planète neutre.';
+                        document.getElementById('p6').innerHTML = 'La façon à là est plein de roches restants des mondes détruits par les guerres précédentes entre les deux peuples.';
+                        document.getElementById('p7').innerHTML = "Et ce n'est que le premier défi dans lequel notre héros devra passer pour pouvoir prévaloir.";
+                        document.getElementById('b1').innerHTML = 'Sauter Introduction';
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

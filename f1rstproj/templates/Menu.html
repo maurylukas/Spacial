@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "css/geral.css"/>
+        <title>Menu</title>
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0"/>
+    </head>
+    <body style = "background-image: url('img/galaxia4.jpg');" onload = "menu ()">
+        <audio id = "som" preload = "auto">
+            <source src = "sg/switch1.mp3" type = "audio/mpeg"/>
+        </audio>
+        <center>
+            <h1>ESPACIAL</h1>
+            <br/>
+            <button type = "button" onclick = "novo ()">
+                <img src = "img/alien.png" alt = "New Game" height = "102" width = "200" style = "vertical-align: middle;"/>
+                <br/>
+                <b id = "p1"></b>
+            </button>
+            <p></p>
+            <button type = "button" onclick = "como ()">
+                <img src = "img/controle.jpg" alt = "How to Play" height = "95" width = "140" style = "vertical-align: middle;"/>
+                <br/>
+                <b id = "p2"></b>
+            </button>
+            <button type = "button" onclick = "saber ()">
+                <img src = "img/livro.png" alt = "Knowing More" height = "96" width = "123" style = "vertical-align: middle;"/>
+                <br/>
+                <b id = "p3"></b>
+            </button>
+            <p></p>
+            <button type = "button" onclick = "quem ()">
+                <img src = "img/nerd.png" alt = "Credits" height = "141" width = "132" style = "vertical-align: middle;"/>
+                <br/>
+                <b id = "p4"></b>
+            </button>
+            <button type = "button" onclick = "voltar ()">
+                <img src = "img/idioma.png" alt = "Change Language" height = "140" width = "140" style = "vertical-align: middle;"/>
+                <br/>
+                <b id = "p5"></b>
+            </button>
+            <p></p>
+            <br/>
+        </center>
+        <script>
+            function menu ()
+            {
+                var estilo = '';
+                switch (window.name)
+                {
+                    default:
+                        estilo = 'color: yellow; text-shadow: 0 0 5px #000000; vertical-align: middle;';
+                        document.getElementById('p1').style.cssText = estilo;
+                        document.getElementById('p2').style.cssText = estilo;
+                        document.getElementById('p3').style.cssText = estilo;
+                        document.getElementById('p4').style.cssText = estilo;
+                        document.getElementById('p5').style.cssText = estilo;
+                        document.getElementById('p1').innerHTML = 'Novo Jogo';
+                        document.getElementById('p2').innerHTML = 'Como Jogar';
+                        document.getElementById('p3').innerHTML = 'Saber Mais';
+                        document.getElementById('p4').innerHTML = 'Créditos';
+                        document.getElementById('p5').innerHTML = 'Trocar Idioma';
+                        break;
+                    case 'ingles':
+                        estilo = 'color: blue; text-shadow: 0 0 5px #FFFFFF; vertical-align: middle;';
+                        document.getElementById('p1').style.cssText = estilo;
+                        document.getElementById('p2').style.cssText = estilo;
+                        document.getElementById('p3').style.cssText = estilo;
+                        document.getElementById('p4').style.cssText = estilo;
+                        document.getElementById('p5').style.cssText = estilo;
+                        document.getElementById('p1').innerHTML = 'New Game';
+                        document.getElementById('p2').innerHTML = 'How to Play';
+                        document.getElementById('p3').innerHTML = 'Knowing More';
+                        document.getElementById('p4').innerHTML = 'Credits';
+                        document.getElementById('p5').innerHTML = 'Change Language';
+                        break;
+                    case 'alemao':
+                        estilo = 'color: red; text-shadow: 0 0 5px #FFFFFF; vertical-align: middle;';
+                        document.getElementById('p1').style.cssText = estilo;
+                        document.getElementById('p2').style.cssText = estilo;
+                        document.getElementById('p3').style.cssText = estilo;
+                        document.getElementById('p4').style.cssText = estilo;
+                        document.getElementById('p5').style.cssText = estilo;
+                        document.getElementById('p1').innerHTML = 'Neues Spiel';
+                        document.getElementById('p2').innerHTML = 'Wie zu Spielen';
+                        document.getElementById('p3').innerHTML = 'Mehr Wissen';
+                        document.getElementById('p4').innerHTML = 'Abspänne';
+                        document.getElementById('p5').innerHTML = 'Sprache Ändern';
+                        break;
+                    case 'italiano':
+                        estilo = 'color: green; text-shadow: 0 0 5px #FFFFFF; vertical-align: middle;';
+                        document.getElementById('p1').style.cssText = estilo;
+                        document.getElementById('p2').style.cssText = estilo;
+                        document.getElementById('p3').style.cssText = estilo;
+                        document.getElementById('p4').style.cssText = estilo;
+                        document.getElementById('p5').style.cssText = estilo;
+                        document.getElementById('p1').innerHTML = 'Nuovo Gioco';
+                        document.getElementById('p2').innerHTML = 'Come Giocare';
+                        document.getElementById('p3').innerHTML = 'Sapere di Più';
+                        document.getElementById('p4').innerHTML = 'Titoli';
+                        document.getElementById('p5').innerHTML = "Cambiare l'idioma";
+                        break;
+                    case 'espanhol':
+                        estilo = 'color: yellow; text-shadow: 0 0 5px #000000; vertical-align: middle;';
+                        document.getElementById('p1').style.cssText = estilo;
+                        document.getElementById('p2').style.cssText = estilo;
+                        document.getElementById('p3').style.cssText = estilo;
+                        document.getElementById('p4').style.cssText = estilo;
+                        document.getElementById('p5').style.cssText = estilo;
+                        document.getElementById('p1').innerHTML = 'Nuevo juego';
+                        document.getElementById('p2').innerHTML = 'Cómo Jugar';
+                        document.getElementById('p3').innerHTML = 'Saber Más';
+                        document.getElementById('p4').innerHTML = 'Títulos';
+                        document.getElementById('p5').innerHTML = 'Cambiar idioma';
+                        break;
+                    case 'frances':
+                        estilo = 'color: blue; text-shadow: 0 0 5px #FFFFFF; vertical-align: middle;';
+                        document.getElementById('p1').style.cssText = estilo;
+                        document.getElementById('p2').style.cssText = estilo;
+                        document.getElementById('p3').style.cssText = estilo;
+                        document.getElementById('p4').style.cssText = estilo;
+                        document.getElementById('p5').style.cssText = estilo;
+                        document.getElementById('p1').innerHTML = 'Nouveau Jeu';
+                        document.getElementById('p2').innerHTML = 'Comment Jouer';
+                        document.getElementById('p3').innerHTML = 'Savoir Plus';
+                        document.getElementById('p4').innerHTML = 'Génériques';
+                        document.getElementById('p5').innerHTML = 'Changer de Langue';
+                        break;
+                }
+            }
+            function novo ()
+            {
+                document.getElementById ('som').play ();
+                document.getElementById ('som').onended = function () {location ('Intro.html');};
+            }
+            function como ()
+            {
+                document.getElementById ('som').play ();
+                document.getElementById ('som').onended = function () {location ('Instru.html');};
+            }
+            function saber ()
+            {
+                document.getElementById ('som').play ();
+                document.getElementById ('som').onended = function () {location ('Histo.html');};
+            }
+            function quem ()
+            {
+                document.getElementById ('som').play ();
+                document.getElementById ('som').onended = function () {location ('Creditos.html');};
+            }
+            function voltar ()
+            {
+                document.getElementById ('som').play ();
+                document.getElementById ('som').onended = function () {location ('index.html');};
+            }
+        </script>
+    </body>
+</html>

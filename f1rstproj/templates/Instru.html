@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "css/geral.css"/>
+        <title>Instruções</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0">
+    </head>
+    <body style = "background-image: url('img/galaxia5.png');" onload = "instru ()">
+        <audio id = "som" preload = "auto" onended = "location ('Menu.html')">
+            <source src = "sg/switch2.mp3" type = "audio/mpeg"/>
+        </audio>
+        <center>
+            <h2 id = "t1"></h2>
+            <h3>
+                <img src = "img/esq.png" alt = "left arrow" height = "65" width = "65" style = "vertical-align: middle;"/>
+                <img src = "img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
+                <span id = "p1"></span>
+            </h3>
+            <h3>
+                <img src = "img/dir.png" alt = "right arrow" height = "65" width = "65" style = "vertical-align: middle;"/>
+                <img src = "img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
+                <span id = "p2"></span>
+            </h3>
+            <h3>
+                <img src = "img/ctrl.png" alt = "ctrl key" height = "59" width = "100" style = "vertical-align: middle;"/>
+                <img src = "img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
+                <span id = "p3"></span>
+            </h3>
+            <h3>
+                <img src = "img/gloss.png" alt = "heart" height = "87" width = "96" style = "vertical-align: middle;"/>
+                <img src = "img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
+                <span id = "p4"></span>
+            </h3>
+            <h3>
+                <img src = "img/bola_azul_aqua.png" alt = "blue ball" height = "90" width = "90" style = "vertical-align: middle;"/>
+                <img src = "img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
+                <span id = "p5"></span>
+            </h3>
+            <br/>
+            <button type = "button" id = "b1"  onclick = "document.getElementById ('som').play ()"></button>
+        </center>
+        <script>
+            function instru ()
+            {
+                switch (window.name)
+                {
+                    default:
+                        document.getElementById('t1').innerHTML = 'INSTRUÇÕES';
+                        document.getElementById('p1').innerHTML = 'ESQUERDA';
+                        document.getElementById('p2').innerHTML = 'DIREITA';
+                        document.getElementById('p3').innerHTML = 'ATIRA';
+                        document.getElementById('p4').innerHTML = 'VIDA';
+                        document.getElementById('p5').innerHTML = 'ESCUDO';
+                        document.getElementById('b1').innerHTML = 'Voltar para o Menu';
+                        break;
+                    case 'ingles':
+                        document.getElementById('t1').innerHTML = 'INSTRUCTIONS';
+                        document.getElementById('p1').innerHTML = 'LEFT';
+                        document.getElementById('p2').innerHTML = 'RIGHT';
+                        document.getElementById('p3').innerHTML = 'TO SHOOT';
+                        document.getElementById('p4').innerHTML = 'LIFE';
+                        document.getElementById('p5').innerHTML = 'SHIELD';
+                        document.getElementById('b1').innerHTML = 'Back to Menu';
+                        break;
+                    case 'alemao':
+                        document.getElementById('t1').innerHTML = 'ANLEITUNGEN';
+                        document.getElementById('p1').innerHTML = 'LINKS';
+                        document.getElementById('p2').innerHTML = 'RECHTS';
+                        document.getElementById('p3').innerHTML = 'SCHIESSEN';
+                        document.getElementById('p4').innerHTML = 'LEBEN';
+                        document.getElementById('p5').innerHTML = 'SCHILD';
+                        document.getElementById('b1').innerHTML = 'Zurück zum Menü';
+                        break;
+                    case 'italiano':
+                        document.getElementById('t1').innerHTML = 'ISTRUZIONI';
+                        document.getElementById('p1').innerHTML = 'SINISTRA';
+                        document.getElementById('p2').innerHTML = 'DESTRA';
+                        document.getElementById('p3').innerHTML = 'SPARA';
+                        document.getElementById('p4').innerHTML = 'VITA';
+                        document.getElementById('p5').innerHTML = 'SCUDO';
+                        document.getElementById('b1').innerHTML = 'Tornare al Menu';
+                        break;
+                    case 'espanhol':
+                        document.getElementById('t1').innerHTML = 'INSTRUCCIONES';
+                        document.getElementById('p1').innerHTML = 'IZQUIERDA';
+                        document.getElementById('p2').innerHTML = 'DERECHA';
+                        document.getElementById('p3').innerHTML = 'DISPARA';
+                        document.getElementById('p4').innerHTML = 'VIDA';
+                        document.getElementById('p5').innerHTML = 'BLINDAJE';
+                        document.getElementById('b1').innerHTML = 'Volver al Menú';
+                        break;
+                    case 'frances':
+                        document.getElementById('t1').innerHTML = 'INSTRUCTIONS';
+                        document.getElementById('p1').innerHTML = 'GAUCHE';
+                        document.getElementById('p2').innerHTML = 'DROITE';
+                        document.getElementById('p3').innerHTML = 'TIRER';
+                        document.getElementById('p4').innerHTML = 'VIE';
+                        document.getElementById('p5').innerHTML = 'BOUCLIER';
+                        document.getElementById('b1').innerHTML = 'Retour au menu';
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "css/especial.css"/>
+        <title>Créditos</title>
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0"/>
+    </head>
+    <body onload = "credi ()">
+        <audio id = "musica" loop = "loop" preload = "auto" autoplay = "autoplay">
+            <source src = "sg/Credits.mp3" type = "audio/mpeg"/>
+        </audio>
+        <audio id = "som" preload = "auto" onended = "location ('Menu.html')">
+            <source src = "sg/switch2.mp3" type = "audio/mpeg"/>
+        </audio>
+        <div id = "titles">
+            <div id = "titlecontent">
+                                
+                <p class = "center">ESPACIAL</p>
+                
+                <pre>                               </pre>
+                                
+                <p class = "center" id = "p1"></p>
+                
+                <p class = "center" id = "p2"></p>
+                
+                <p class = "center" id = "p3"></p>
+                
+                <p class = "center" id = "p4"></p>
+                
+                <p class = "center" id = "p5"></p>
+                
+                <p class = "center" id = "p6"></p>
+                
+                <p class = "center" id = "p7"></p>
+                
+                <p class = "center" id = "p8"></p>
+                
+            </div>
+        </div>
+        <center>
+            <button type = "button" id = "b1"  onclick = "document.getElementById ('som').play ()"></button>
+        </center>
+        <script>
+            function credi ()
+            {
+                var autor = '<br/>Maury Lukas';
+                var graca = '<br/>Maury<br/>Elena<br/>Markos<br/>Patrícia<br/>Gerhard<br/>Daniel<br/>Milton<br/>Rafael';
+                switch (window.name)
+                {
+                    default:
+                        document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>ROTEIRISTA<br/>PROGRAMADOR<br/>TRADUTOR' + autor;
+                        document.getElementById('p2').innerHTML = 'EFEITOS SONOROS E IMAGENS<br/>Fontes Públicas na Internet';
+                        document.getElementById('p3').innerHTML = 'TRILHA SONORA<br/>Músicas Temas de<br/>Star Trek e Star Wars';
+                        document.getElementById('p4').innerHTML = 'AGRADECIMENTOS' + graca;
+                        document.getElementById('p5').innerHTML = '';
+                        document.getElementById('p6').innerHTML = '';
+                        document.getElementById('p7').innerHTML = '';
+                        document.getElementById('p8').innerHTML = '';
+                        document.getElementById('b1').innerHTML = 'Voltar para o Menu';
+                        break;
+                    case 'ingles':
+                        document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>SCREENWRITER<br/>PROGRAMMER<br/>TRANSLATOR' + autor;
+                        document.getElementById('p2').innerHTML = 'SOUND EFFECTS AND IMAGES<br/>Public Sources on the Internet';
+                        document.getElementById('p3').innerHTML = 'SOUND TRACK<br/>Theme Songs from<br/>Star Trek and Star Wars';
+                        document.getElementById('p4').innerHTML = 'THANKS' + graca;
+                        document.getElementById('p5').innerHTML = '';
+                        document.getElementById('p6').innerHTML = '';
+                        document.getElementById('p7').innerHTML = '';
+                        document.getElementById('p8').innerHTML = '';
+                        document.getElementById('b1').innerHTML = 'Back to Menu';
+                        break;
+                    case 'alemao':
+                        document.getElementById('p1').innerHTML = 'GAME-DESIGNER<br/>DREHBUCHAUTOR<br/>PROGRAMMIERER<br/>ÜBERSETZER' + autor;
+                        document.getElementById('p2').innerHTML = 'SOUND-EFFEKTE UND BILDER<br/>Öffentliche Quellen im Internet';
+                        document.getElementById('p3').innerHTML = 'SOUNDTRACK<br/>Titelmelodien von<br/>Star Trek und Star Wars';
+                        document.getElementById('p4').innerHTML = 'DANK' + graca;
+                        document.getElementById('p5').innerHTML = '';
+                        document.getElementById('p6').innerHTML = '';
+                        document.getElementById('p7').innerHTML = '';
+                        document.getElementById('p8').innerHTML = '';
+                        document.getElementById('b1').innerHTML = 'Zurück zum Menü';
+                        break;
+                    case 'italiano':
+                        document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>SCENEGGIATORE<br/>PROGRAMMATORE<br/>TRADUTTORE' + autor;
+                        document.getElementById('p2').innerHTML = 'EFFETTI SONORI ED IMMAGINI<br/>Fonti Pubbliche su Internet';
+                        document.getElementById('p3').innerHTML = 'COLONNA SONORA<br/>Sigle Musicali di<br/>Star Trek e Star Wars';
+                        document.getElementById('p4').innerHTML = 'RINGRAZIAMENTI' + graca;
+                        document.getElementById('p5').innerHTML = '';
+                        document.getElementById('p6').innerHTML = '';
+                        document.getElementById('p7').innerHTML = '';
+                        document.getElementById('p8').innerHTML = '';
+                        document.getElementById('b1').innerHTML = 'Tornare al Menu';
+                        break;
+                    case 'espanhol':
+                        document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>GUIONISTA<br/>PROGRAMADOR<br/>TRADUCTOR' + autor;
+                        document.getElementById('p2').innerHTML = 'EFECTOS SONOROS E IMÁGENES<br/>Fuentes Públicas en Internet';
+                        document.getElementById('p3').innerHTML = 'BANDA SONORA<br/>Temas Musicales de<br/>Star Trek y Star Wars';
+                        document.getElementById('p4').innerHTML = 'AGRADECIMIENTOS' + graca;
+                        document.getElementById('p5').innerHTML = '';
+                        document.getElementById('p6').innerHTML = '';
+                        document.getElementById('p7').innerHTML = '';
+                        document.getElementById('p8').innerHTML = '';
+                        document.getElementById('b1').innerHTML = 'Volver al Menú';
+                        break;
+                    case 'frances':
+                        document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>SCÉNARISTE<br/>PROGRAMMEUR<br/>TRADUCTEUR' + autor;
+                        document.getElementById('p2').innerHTML = 'EFFETS SONORES ET IMAGES<br/>Les Sources Publiques sur Internet';
+                        document.getElementById('p3').innerHTML = 'BANDE SONORE<br/>Les Indicatifs Musicaux de<br/>Star Trek et Star Wars';
+                        document.getElementById('p4').innerHTML = 'REMERCIEMENTS' + graca;
+                        document.getElementById('p5').innerHTML = '';
+                        document.getElementById('p6').innerHTML = '';
+                        document.getElementById('p7').innerHTML = '';
+                        document.getElementById('p8').innerHTML = '';
+                        document.getElementById('b1').innerHTML = 'Retour au menu';
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>
