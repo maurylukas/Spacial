@@ -8,6 +8,7 @@
         <script type = "text/javascript" src = "static/js/explosao.js"></script>
         <script type = "text/javascript" src = "static/js/vida.js"></script>
         <script type = "text/javascript" src = "static/js/escudo.js"></script>
+        <script type = "text/javascript" src = "static/js/chefe.js"></script>
         <link rel = "stylesheet" type = "text/css" href = "static/css/geral.css"/>
         <title>Espacial</title>
         <meta charset = "UTF-8"/>
@@ -24,6 +25,7 @@
             <source src = "static/sg/tiro.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
+            <h1>ESPACIAL</h1>
             <br/>
             <canvas id = "tela" style = "border: 1px solid #FFFF00;">Sem suporte a HTML5</canvas>
             <br/>
@@ -92,6 +94,17 @@
             };
             imagemOver.src = 'static/img/Game_Over.png';
 
+            var chefe = new Chefe ();
+
+            var larguraContinua = canvas.width / 3.2; // original = 400
+            var alturaContinua = canvas.height / 3.2; // original = 225
+            var imagemContinua = new Image ();
+            imagemContinua.onload = function ()
+            {
+
+            };
+            imagemContinua.src = 'static/img/continue.png';
+
             document.addEventListener ('keydown', function (pressiona)
             {
                 if (pressiona.keyCode == 37)
@@ -151,7 +164,7 @@
                     contexto.fillText ('Vida (s): ' + vida, z, fonte);
                     contexto.fillText ('Ponto (s): ' + ponto, canvas.width - fonte * 6, fonte);
 
-                    if (fim)
+                    if (fim || chefe.final)
                     {
                         para ();
                     }
@@ -186,6 +199,11 @@
                 fundo.proximo ();
                 fundo.desenhar ();
                 nave.desenhar ();
+                if (chefe.chefe)
+                {
+                    chefe.desenhar ();
+                    chefe.proximo ();
+                }
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
                     astros [indiceAstro].desenhar();
@@ -377,15 +395,24 @@
 
             function para ()
             {
-                contexto.drawImage (imagemOver, (canvas.width - larguraOver) / 2, (canvas.height - alturaOver) / 2, larguraOver, alturaOver);
-                explosoes [indiceAstro].desenhar ();
-                explosoes [indiceAstro].explosao = false;
+
+                if (chefe.final)
+                {
+                    contexto.drawImage (imagemContinua, (canvas.width - larguraContinua) / 2, (canvas.height - alturaContinua) / 2, larguraContinua, alturaContinua);
+                }
+                else
+                {
+                    contexto.drawImage (imagemOver, (canvas.width - larguraOver) / 2, (canvas.height - alturaOver) / 2, larguraOver, alturaOver);
+                    explosoes [indiceAstro].desenhar ();
+                    explosoes [indiceAstro].explosao = false;
+                }
                 for (indiceTiro = 0; indiceTiro < tiros.length; indiceTiro ++)
                 {
                     tiros [indiceTiro].tiro = false;
                 }
                 fundo.reinicio ();
                 nave.reinicio ();
+                chefe.reinicio ();
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
                     astros [indiceAstro].reinicio ();
@@ -467,7 +494,8 @@
                         return true;
                     case 99:
                         anterior = ponto;
-                        return true;
+                        chefe.acabar ();
+                        return false;
                     default:
                         return false;
                 }
