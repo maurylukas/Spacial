@@ -1,12 +1,12 @@
 function Escudo ()
 {
     this.escudo = false;
-    this.tamanho = canvas.height / 12; // original = 50
+    this.tamanho = canvas.height / 14.4; // original = 50
     this.posicaoX = 0;
     this.posicaoY = 0;
     this.centro = this.tamanho / 2;
     this.raio = this.tamanho / 2;
-    this.diferenca = canvas.height / 120; // original = 5
+    this.diferenca = canvas.height / 144; // original = 5
     this.imagem = new Image ();
     this.imagem.onload = function ()
     {

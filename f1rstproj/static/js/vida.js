@@ -1,14 +1,14 @@
 function Vida ()
 {
     this.vida = false;
-    this.largura = canvas.width / 16; // original = 60
-    this.altura = canvas.height / 12; // original = 50
+    this.largura = canvas.width / 21.333; // original = 60
+    this.altura = canvas.height / 14.4; // original = 50
     this.posicaoX = 0;
     this.posicaoY = 0;
     this.centroX = this.largura / 2;
     this.centroY = this.altura / 2;
     this.raio = this.altura / 2;
-    this.diferenca = canvas.height / 120; // original = 5
+    this.diferenca = canvas.height / 144; // original = 5
     this.imagem = new Image ();
     this.imagem.onload = function ()
     {

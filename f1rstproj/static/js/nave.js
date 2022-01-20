@@ -3,18 +3,18 @@ function Nave ()
     this.z = 0;
     this.esquerda = false;
     this.direita = false;
-    this.largura = canvas.width / 9.6; // original = 100
-    this.altura = canvas.height / 11.76; // original = 51
+    this.largura = canvas.width / 14.175; // original = 90,3
+    this.altura = canvas.height / 13.1868; // original = 54,6
     this.posicao = (canvas.width - this.largura) / 2;
     this.atira = false;
     this.centroXElipse = this.largura / 2;
-    this.centroYElipse = this.altura / 1.76; // original = 29
+    this.centroYElipse = this.altura / 2; // 1.76; // original = 29
     this.raioXElipse = this.largura / 2;
-    this.raioYElipse = this.altura / 3.4; // original = 15
+    this.raioYElipse = this.altura / 2; // 3.4; // original = 15
     this.protecao = false;
     this.tempo = 0;
     this.contagem = 0;
-    this.diferenca = canvas.width / 192; // original = 5
+    this.diferenca = canvas.width / 256; // original = 5
     this.imagem1 = new Image ();
     this.imagem2 = new Image ();
     this.imagem1.onload = function ()
@@ -25,8 +25,8 @@ function Nave ()
     {
         
     };
-    this.imagem1.src = 'static/img/alien.png';
-    this.imagem2.src = 'static/img/escudo.png';
+    this.imagem1.src = 'static/img/ufo.png';
+    this.imagem2.src = 'static/img/shield.png';
     this.desenhar = function ()
     {
         if (this.protecao)

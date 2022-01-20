@@ -1,14 +1,14 @@
 function Tiro ()
 {
     this.tiro = false;
-    this.largura = canvas.width / 68.57; // original = 14
-    this.altura = canvas.height / 31.58; // original = 19
+    this.largura = canvas.width / 91.42857; // original = 14
+    this.altura = canvas.height / 37.89473; // original = 19
     this.posicaoX = nave.posicao + (nave.largura - this.largura) / 2;
     this.posicaoY = nave.altura;
     this.centroX = this.largura / 2;
     this.centroY = this.altura / 2;
     this.raio = this.largura / 2;
-    this.diferenca = canvas.height / 120; // original = 5
+    this.diferenca = canvas.height / 144; // original = 5
     this.imagem = new Image ();
     this.imagem.onload = function ()
     {

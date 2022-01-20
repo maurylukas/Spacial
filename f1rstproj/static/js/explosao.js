@@ -2,7 +2,7 @@ function Explosao ()
 {
     this.explosao = false;
     this.tamanhoOrigem = 64;
-    this.tamanhoDestino = canvas.height / 9.375; // original = 64
+    this.tamanhoDestino = canvas.height / 11.25; // original = 64
     this.origemX = 0;
     this.origemY = 0;
     this.destinoX = 0;

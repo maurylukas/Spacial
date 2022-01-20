@@ -1,16 +1,16 @@
 function Astro ()
 {
     this.tamanhoOrigem = 50;
-    this.tamanhoDestino = canvas.height / 12; // original = 50
+    this.tamanhoDestino = canvas.height / 14.4; // original = 50
     this.origemX = 0;
     this.origemY = 0;
     this.destinoX = Math.floor (Math.random () * (canvas.width - this.tamanhoDestino));
     this.destinoY = canvas.height;
     this.centro = this.tamanhoDestino / 2;
-    this.raio = this.tamanhoDestino / 2.77; // original = 18
+    this.raio = this.tamanhoDestino / 2.777; // original = 18
     this.controle = 1;
-    this.maximo = canvas.height / 100; // original = 6
-    this.minimo = canvas.height / 150; // original = 4
+    this.maximo = canvas.height / 120; // original = 6
+    this.minimo = canvas.height / 180; // original = 4
     this.velocidade = Math.floor (Math.random () * (this.maximo - this.minimo + 1) + this.minimo);
     this.imagem = new Image ();
     this.imagem.onload = function ()
