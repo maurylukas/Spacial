@@ -25,13 +25,13 @@
             <source src = "static/sg/tiro.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
-            <h1>ESPACIAL</h1>
+            <h1>SPACIAL</h1>
             <br/>
             <canvas id = "tela" style = "border: 1px solid #FFFF00;">Sem suporte a HTML5</canvas>
             <br/>
             <button id = "botao" type = "button" onclick = "pausa ()" autofocus> Play </button>
             <button type = "button" onclick = "location.assign ('principal')"> Exit </button>
-            <p>Autor: Maury Lukas</p>
+            <!-- <p>Autor: Maury Lukas</p> -->
         </center>
         <script>
             var canvas = document.getElementById ('tela');
@@ -146,6 +146,15 @@
             var fonte = canvas.height / 36; // original = 20
             var espera = 20;
 
+            var larguraCoracao = canvas.width / 40; // original = 32
+            var alturaCoracao = canvas.height / 24; // original = 30
+            var imagemCoracao = new Image ();
+            imagemCoracao.onload = function ()
+            {
+
+            };
+            imagemCoracao.src = 'static/img/heart.png';
+
             contexto.font = fonte + 'px Arial';
             contexto.fillStyle = 'yellow';
 
@@ -160,9 +169,10 @@
                     teclado ();
 
                     colide ();
-                    
-                    contexto.fillText ('Vida (s): ' + vida, z, fonte);
-                    contexto.fillText ('Ponto (s): ' + ponto, canvas.width - fonte * 6, fonte);
+
+                    contexto.drawImage (imagemCoracao, z, z, larguraCoracao, alturaCoracao);
+                    contexto.fillText ('x' + vida, larguraCoracao, fonte);
+                    contexto.fillText ('Score: ' + ponto, canvas.width - fonte * 5, fonte);
 
                     if (fim || chefe.final)
                     {
