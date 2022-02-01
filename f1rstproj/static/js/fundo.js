@@ -1,3 +1,4 @@
+// Begin of background function
 function Fundo ()
 {
     this.z = 0;
@@ -17,6 +18,7 @@ function Fundo ()
     };
     this.sorteio = function ()
     {
+        // Randomizing background
         if (Math.random () <= 1 / 2)
         {
             this.imagem1.src = 'static/img/espaco2.png';
@@ -30,14 +32,17 @@ function Fundo ()
     };
     this.desenhar = function ()
     {
+        // Drawing background
         contexto.drawImage (this.imagem1, this.z, this.posicao, this.totalX, this.totalY);
         contexto.drawImage (this.imagem2, this.z, this.posicao + this.totalY, this.totalX, this.totalY);
     };
     this.proximo = function ()
     {
+        // Loading next frame
         this.posicao -= 1;
         if (this.posicao <= -this.totalY)
         {
+            // Repositioning background
             this.posicao = 0;
             troca = this.imagem1;
             this.imagem1 = this.imagem2;
@@ -46,7 +51,9 @@ function Fundo ()
     };
     this.reinicio = function ()
     {
+        // Resetting background
         this.posicao = 0;
         this.sorteio ();
     };
 }
+// End of background function

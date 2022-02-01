@@ -1,3 +1,4 @@
+// Begin of shield function
 function Escudo ()
 {
     this.escudo = false;
@@ -15,14 +16,18 @@ function Escudo ()
     this.imagem.src = 'static/img/bola_azul_aqua.png';
     this.desenhar = function ()
     {
+        // Drawing shield
         contexto.drawImage (this.imagem, this.posicaoX, this.posicaoY, this.tamanho, this.tamanho);
     };
     this.proximo = function ()
     {
+        // Loading next frame
         this.posicaoY -= this.diferenca;
         if (this.posicaoY <= -this.tamanho)
         {
+            // Resetting shield
             this.escudo = false;
         }
     };
 }
+// End of shield function

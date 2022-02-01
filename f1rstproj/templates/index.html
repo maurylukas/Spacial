@@ -13,79 +13,110 @@ and open the template in the editor.
     </head>
     <body style = "background-image: url('static/img/galaxia1.jpg'); background-position: left top; background-repeat: repeat; background-size: cover; position: relative;">
         <audio id = "som" preload = "auto" onended = "location.assign ('principal')">
-            <source src = "static/sg/button1.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/button1.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
             <h1>SPACIAL</h1>
             <br/>
+
+            <!-- German button -->
             <button type = "button" onclick = "alemao ()">
                 <img src = "static/img/Germany.png" alt = "Auf Deutsch möchte ich spielen" height = "162" width = "260"/>
                 <br/>
                 <b style = "color: red; text-shadow: 0 0 5px #FFFFFF;">Auf Deutsch möchte ich spielen</b>
             </button>
+
+            <!-- Spanish button -->
             <button type = "button" onclick = "espanhol ()">
                 <img src = "static/img/Spain.png" alt = "Quiero jugar en Español" height = "162" width = "260"/>
                 <br/>
                 <b style = "color: red; text-shadow: 0 0 5px #FFFFFF;">Quiero jugar en Español</b>
             </button>
+
+            <!-- French button -->
             <button type = "button" onclick = "frances ()">
                 <img src = "static/img/France.png" alt = "Je voudrais jouer en Français" height = "162" width = "260"/>
                 <br/>
                 <b style = "color: blue; text-shadow: 0 0 5px #FFFFFF;">Je voudrais jouer en Français</b>
             </button>
+
             <p></p>
+
+            <!-- English button -->
             <button type = "button" onclick = "ingles ()">
                 <img src = "static/img/United_States.png" alt = "I want to play in English" height = "162" width = "260"/>
                 <br/>
                 <b style = "color: blue; text-shadow: 0 0 5px #FFFFFF;">I want to play in English</b>
             </button>
+
+            <!-- Italian button -->
             <button type = "button" onclick = "italiano ()">
                 <img src = "static/img/Italy.png" alt = "Voglio giocare in Italiano" height = "162" width = "260"/>
                 <br/>
                 <b style = "color: green; text-shadow: 0 0 5px #FFFFFF;">Voglio giocare in Italiano</b>
             </button>
+
+            <!-- Portuguese button -->
             <button type = "button" onclick = "portugues ()">
                 <img src = "static/img/Brazil.png" alt = "Quero jogar em Português" height = "162" width = "260"/>
                 <br/>
                 <b style = "color: green; text-shadow: 0 0 5px #FFFFFF;">Quero jogar em Português</b>
             </button>
+
             <p></p>
         </center>
         <script>
+            // Begin of buttons' functions
+
+            // German function
             function alemao ()
             {    
                 window.name = 'alemao';
                 som ();
             }
+
+            // Spanish function
             function espanhol ()
             {    
                 window.name = 'espanhol';
                 som ();
             }
+
+            // French function
             function frances ()
             {    
                 window.name = 'frances';
                 som ();
             }
+
+            // English function
             function ingles ()
             {    
                 window.name = 'ingles';
                 som ();
             }
+
+            // Italian function
             function italiano ()
             {    
                 window.name = 'italiano';
                 som ();
             }
+
+            // Portuguese function
             function portugues ()
             {    
                 window.name = 'portugues';
                 som ();
             }
+
+            // Sound function
             function som ()
             {
                 document.getElementById ('som').play ();
             }
+
+            // End of buttons' functions
         </script>
     </body>
 </html>

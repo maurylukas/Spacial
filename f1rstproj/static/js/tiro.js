@@ -1,3 +1,4 @@
+// Begin of shot function
 function Tiro ()
 {
     this.tiro = false;
@@ -17,20 +18,25 @@ function Tiro ()
     this.imagem.src = 'static/img/tiro2.png';
     this.atirar = function ()
     {
+        // Loading shot
         this.tiro = true;
         this.posicaoX = nave.posicao + (nave.largura - this.largura) / 2;
         this.posicaoY = nave.altura;
     };
     this.desenhar = function ()
     {
+        // Drawing shot
         contexto.drawImage (this.imagem, this.posicaoX, this.posicaoY, this.largura, this.altura);
     };
     this.proximo = function ()
     {
+        // Loading next frame
         this.posicaoY += this.diferenca;
         if (this.posicaoY >= canvas.height)
         {
+            // Resetting shot
             this.tiro = false;
         }
     };
 }
+// End of shot function

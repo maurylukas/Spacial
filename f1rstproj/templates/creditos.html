@@ -13,10 +13,10 @@ and open the template in the editor.
     </head>
     <body onload = "credi ()">
         <audio id = "musica" preload = "auto" autoplay = "autoplay" onended = "location.assign ('principal')">
-            <source src = "static/sg/Credits.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/Credits.mp3" type = "audio/mpeg"/>
         </audio>
         <audio id = "som" preload = "auto" onended = "location.assign ('principal')">
-            <source src = "static/sg/switch2.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/switch2.mp3" type = "audio/mpeg"/>
         </audio>
         <div id = "titles">
             <div id = "titlecontent">
@@ -47,12 +47,14 @@ and open the template in the editor.
             <button type = "button" id = "b1"  onclick = "document.getElementById ('som').play ()"></button>
         </center>
         <script>
+            // Begin of adding texts according to the chosen language
             function credi ()
             {
                 var autor = '<br/>Maury Lukas';
                 var graca = '<br/>Maury<br/>Elena<br/>Markos<br/>Patrícia<br/>Gerhard<br/>Daniel<br/>Milton<br/>Rafael';
                 switch (window.name)
                 {
+                    // Portuguese
                     default:
                         document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>ROTEIRISTA<br/>PROGRAMADOR<br/>TRADUTOR' + autor;
                         document.getElementById('p2').innerHTML = 'EFEITOS SONOROS E IMAGENS<br/>Fontes Públicas na Internet';
@@ -64,6 +66,8 @@ and open the template in the editor.
                         document.getElementById('p8').innerHTML = '';
                         document.getElementById('b1').innerHTML = 'Voltar para o Menu';
                         break;
+
+                    // English
                     case 'ingles':
                         document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>SCREENWRITER<br/>PROGRAMMER<br/>TRANSLATOR' + autor;
                         document.getElementById('p2').innerHTML = 'SOUND EFFECTS AND IMAGES<br/>Public Sources on the Internet';
@@ -75,6 +79,8 @@ and open the template in the editor.
                         document.getElementById('p8').innerHTML = '';
                         document.getElementById('b1').innerHTML = 'Back to Menu';
                         break;
+
+                    // German
                     case 'alemao':
                         document.getElementById('p1').innerHTML = 'GAME-DESIGNER<br/>DREHBUCHAUTOR<br/>PROGRAMMIERER<br/>ÜBERSETZER' + autor;
                         document.getElementById('p2').innerHTML = 'SOUND-EFFEKTE UND BILDER<br/>Öffentliche Quellen im Internet';
@@ -86,6 +92,8 @@ and open the template in the editor.
                         document.getElementById('p8').innerHTML = '';
                         document.getElementById('b1').innerHTML = 'Zurück zum Menü';
                         break;
+
+                    // Italian
                     case 'italiano':
                         document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>SCENEGGIATORE<br/>PROGRAMMATORE<br/>TRADUTTORE' + autor;
                         document.getElementById('p2').innerHTML = 'EFFETTI SONORI ED IMMAGINI<br/>Fonti Pubbliche su Internet';
@@ -97,6 +105,8 @@ and open the template in the editor.
                         document.getElementById('p8').innerHTML = '';
                         document.getElementById('b1').innerHTML = 'Tornare al Menu';
                         break;
+
+                    // Spanish
                     case 'espanhol':
                         document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>GUIONISTA<br/>PROGRAMADOR<br/>TRADUCTOR' + autor;
                         document.getElementById('p2').innerHTML = 'EFECTOS SONOROS E IMÁGENES<br/>Fuentes Públicas en Internet';
@@ -108,6 +118,8 @@ and open the template in the editor.
                         document.getElementById('p8').innerHTML = '';
                         document.getElementById('b1').innerHTML = 'Volver al Menú';
                         break;
+
+                    // French
                     case 'frances':
                         document.getElementById('p1').innerHTML = 'GAME DESIGNER<br/>SCÉNARISTE<br/>PROGRAMMEUR<br/>TRADUCTEUR' + autor;
                         document.getElementById('p2').innerHTML = 'EFFETS SONORES ET IMAGES<br/>Les Sources Publiques sur Internet';
@@ -121,6 +133,7 @@ and open the template in the editor.
                         break;
                 }
             }
+            // End of adding texts according to the chosen language
         </script>
     </body>
 </html>

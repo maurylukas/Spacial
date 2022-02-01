@@ -13,59 +13,77 @@ and open the template in the editor.
     </head>
     <body style = "background-image: url('static/img/galaxia3.jpg'); background-position: left top; background-repeat: repeat; background-size: cover; position: relative;" onload = "histo ()">
         <audio id = "som" preload = "auto" onended = "location.assign ('principal')">
-            <source src = "static/sg/switch2.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/switch2.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
             <h2 id = "t1"></h2>
             <br/>
+
+            <!-- Herculeans image -->
             <h3>
                 <img src = "static/img/enemy.png" alt = "herculeans" height = "125" width = "150" style = "vertical-align: -90px;"/>
                 <span id = "p1" style = "text-align: left; display: inline-table;"></span>
             </h3>
+
             <br/>
+
+            <!-- Meta-lureans image -->
             <h3>
                 <span id = "p2" style = "text-align: right; display: inline-table;"></span>
                 <img src = "static/img/hero.png" alt = "meta-lureans" height = "100" width = "120" style = "vertical-align: -75px;"/>
             </h3>
+
             <br/>
             <p></p>
             <button type = "button" id = "b1"  onclick = "document.getElementById ('som').play ()"></button>
         </center>
         <script>
+            // Begin of adding texts according to the chosen language
             function histo ()
             {
                 switch (window.name)
                 {
+                    // Portuguese
                     default:
                         document.getElementById('t1').innerHTML = 'SABER MAIS';
                         document.getElementById('p1').innerHTML = 'Os Herculeanos são um vasto império militar<br/>especializado em guerrear e possuem o<br/>ímpeto de se disseminar a qualquer custo<br/>vencendo quem quer que seja.';
                         document.getElementById('p2').innerHTML = 'Os Meta-Lureanos são uma civilização<br/>extremamente avançada científica e tecnologicamente<br/>movidos pela vontade de sempre pesquisar<br/>e descobrir os segredos do universo.';
                         document.getElementById('b1').innerHTML = 'Voltar para o Menu';
                         break;
+
+                    // English
                     case 'ingles':
                         document.getElementById('t1').innerHTML = 'KNOWING MORE';
                         document.getElementById('p1').innerHTML = 'The Herculeans are a vast military empire<br/>specialized in war and have an urge<br/>to scatter themselves no matter what<br/>by beating whoever it is.';
                         document.getElementById('p2').innerHTML = 'The Meta-Lureans are a highly advanced<br/>scientific and technological civilization<br/>moved by a will to always research<br/>and discover the secrets of the universe .';
                         document.getElementById('b1').innerHTML = 'Back to Menu';
                         break;
+
+                    // German
                     case 'alemao':
                         document.getElementById('t1').innerHTML = 'MEHR WISSEN';
                         document.getElementById('p1').innerHTML = 'Die Herculeaner sind ein riesiges militärisches<br/>Imperium auf Kriege spezialisiert und<br/>sie haben einen Impuls, sich um jeden Preis<br/>zu verbreiten und irgendwer zu besiegen.';
                         document.getElementById('p2').innerHTML = 'Die Meta-Lureaner sind eine hoch fortgeschrittene<br/>wissenschaftlich und technologisch Zivilisation,<br/>die von einem Willen bewegt wird, immer zu forschen<br/>und die Geheimnisse des Universums zu entdecken.';
                         document.getElementById('b1').innerHTML = 'Zurück zum Menü';
                         break;
+
+                    // Italian
                     case 'italiano':
                         document.getElementById('t1').innerHTML = 'SAPERE DI PIÙ';
                         document.getElementById('p1').innerHTML = "Gli Ercoleani sono un vasto impero militare<br/>specializzato in guerra e hanno l'impulso<br/>di diffondersi a tutti i costi<br/>vincendo chiunque altro.";
                         document.getElementById('p2').innerHTML = "I Meta-Lureani sono una civiltà<br/>estremamente avanzata scientifica e tecnologica<br/>guidati dal desiderio di sempre ricercare<br/>e scoprire i segreti dell'universo.";
                         document.getElementById('b1').innerHTML = 'Tornare al Menu';
                         break;
+
+                    // Spanish
                     case 'espanhol':
                         document.getElementById('t1').innerHTML = 'SABER MÁS';
                         document.getElementById('p1').innerHTML = 'Los Herculeanos son un vasto imperio militar<br/>especializado en guerrear y tienen el<br/>impulso de propagarse a cualquier precio<br/>venciendo quienquiera que sea.';
                         document.getElementById('p2').innerHTML = 'Los Meta-Lureanos son una civilización<br/>altamente avanzada científica y tecnológicamente<br/>movidos por el deseo de investigar siempre<br/>y descubrir los secretos del universo.';
                         document.getElementById('b1').innerHTML = 'Volver al Menú';
                         break;
+
+                    // French
                     case 'frances':
                         document.getElementById('t1').innerHTML = 'SAVOIR PLUS';
                         document.getElementById('p1').innerHTML = "Les Herculéens sont un vaste empire militaire<br/>spécialisé dans la guerre et ont l'envie<br/>de se disperser quoi qu'il en soit<br/>en battant n'importe qui.";
@@ -74,6 +92,7 @@ and open the template in the editor.
                         break;
                 }
             }
+            // End of adding texts according to the chosen language
         </script>
     </body>
 </html>

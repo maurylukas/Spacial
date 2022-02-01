@@ -1,3 +1,4 @@
+// Begin of final boss function
 function Chefe ()
 {
     this.chefe = false;
@@ -14,6 +15,7 @@ function Chefe ()
     this.imagem.src = 'static/img/ship.png';
     this.acabar = function ()
     {
+        // Loading final boss
         this.chefe = true;
         this.posicaoX = nave.posicao + (nave.largura - this.tamanho) / 2;
         if (this.posicaoX < 0)
@@ -28,11 +30,14 @@ function Chefe ()
     };
     this.desenhar = function ()
     {
+        // Drawing final boss
         contexto.drawImage (this.imagem, this.posicaoX, this.posicaoY, this.tamanho, this.tamanho);
     };
     this.proximo = function ()
     {
+        // Loading next frame
         this.posicaoY -= this.diferenca;
+        // Stopping game loop
         if (this.posicaoY <= 0)
         {
             this.chefe = false;
@@ -41,7 +46,9 @@ function Chefe ()
     };
     this.reinicio = function ()
     {
+        // Resetting final boss
         this.final = false;
         this.posicaoY = canvas.height;
     };
 }
+// End of final boss function

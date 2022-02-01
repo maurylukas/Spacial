@@ -1,3 +1,4 @@
+// Begin of explosion function
 function Explosao ()
 {
     this.explosao = false;
@@ -17,13 +18,16 @@ function Explosao ()
     this.imagem.src = 'static/img/explosao.png';
     this.desenhar = function ()
     {
+        // Drawing explosion
         contexto.drawImage (this.imagem, this.origemX, this.origemY, this.tamanhoOrigem, this.tamanhoOrigem, this.destinoX, this.destinoY, this.tamanhoDestino, this.tamanhoDestino);
     };
     this.proximo = function ()
     {
+        // Loading next frame
         this.origemX += this.tamanhoOrigem;
         if (this.controle == 16)
         {
+            // Resetting spritesheet
             this.origemX = 0;
             this.origemY = 0;
             this.controle = 0;
@@ -31,9 +35,11 @@ function Explosao ()
         }
         else if (this.controle % 4 == 0)
         {
+            // Looping spritesheet
             this.origemX = 0;
             this.origemY += this.tamanhoOrigem;
         }
         this.controle ++;
     };
 }
+// End of explosion function

@@ -13,10 +13,10 @@
         <h1>STAR WARS<sub>titles in CSS3</sub></h1>
         -->
         <audio id = "musica" preload = "auto" autoplay = "autoplay" onended = "location.assign ('espacial')">
-            <source src = "static/sg/StarWars.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/StarWars.mp3" type = "audio/mpeg"/>
         </audio>
         <audio id = "som" preload = "auto" onended = "location.assign ('espacial')">
-            <source src = "static/sg/switch2.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/switch2.mp3" type = "audio/mpeg"/>
         </audio>
         <div id = "titles">
             <div id = "titlecontent">
@@ -49,10 +49,12 @@
             <button type = "button" id = "b1"  onclick = "document.getElementById ('som').play ()"></button>
         </center>
         <script>
+            // Begin of adding texts according to the chosen language
             function intro ()
             {
                 switch (window.name)
                 {
+                    // Portuguese
                     default:
                         document.getElementById('p1').innerHTML = 'Em um mesmo sistema planetário, havia dois mundos habitados, cada um com uma espécie dominante inteligente, tão diferentes entre si, que várias guerras já travaram.';
                         document.getElementById('p2').innerHTML = 'Após séculos de lutas, perceberam que uma espécie deveria partir para sempre, e uma última batalha decidiria quem.';
@@ -63,6 +65,8 @@
                         document.getElementById('p7').innerHTML = 'E este é só o primeiro desafio pelo qual nosso herói terá que passar para poder prevalecer.';
                         document.getElementById('b1').innerHTML = 'Pular Introdução';
                         break;
+
+                    // English
                     case 'ingles':
                         document.getElementById('p1').innerHTML = 'In one planetary system, there were two worlds, each inhabited by a dominant intelligent species, so different from one another, that many wars have they waged.';
                         document.getElementById('p2').innerHTML = 'After fighting for centuries, they realized one species should leave for good, and one last battle would decide who.';
@@ -73,6 +77,8 @@
                         document.getElementById('p7').innerHTML = 'And that is just the first challenge through which our hero must pass in order to prevail.';
                         document.getElementById('b1').innerHTML = 'Skip Introduction';
                         break;
+
+                    // German
                     case 'alemao':
                         document.getElementById('p1').innerHTML = 'In einem Planetensystem gab es zwei Welten, die jeweils von einer anderen dominanten intelligenten Spezies bewohnt wurden, so verschieden voneinander, dass viele Kriege haben sie geführt.';
                         document.getElementById('p2').innerHTML = 'Nach Jahrhunderten der Kämpfe haben sie realisiert, dass eine Spezies für immer verlassen sollte, und eine letzte Schlacht würde entscheiden, wer.';
@@ -83,6 +89,8 @@
                         document.getElementById('p7').innerHTML = 'Und das ist nur die erste Herausforderung, durch welches unser Held bestehen muss, um zu sich durchsetzen.';
                         document.getElementById('b1').innerHTML = 'Überspringen Einführung';
                         break;
+
+                    // Italian
                     case 'italiano':
                         document.getElementById('p1').innerHTML = "In un stesso sistema planetario, c'erano due mondi abitati, ognuno con una specie dominante intelligente, così diverse, che avevano combattuto diverse guerre.";
                         document.getElementById('p2').innerHTML = 'Dopo secoli di lotte, si sono resi conto che una specie dovrebbero lasciare per sempre, ed una battaglia finale deciderebbe chi.';
@@ -93,6 +101,8 @@
                         document.getElementById('p7').innerHTML = 'E questo è solo la prima sfida per cui il nostro eroe dovrà passare per poter prevalere.';
                         document.getElementById('b1').innerHTML = 'Saltare Introduzione';
                         break;
+
+                    // Spanish
                     case 'espanhol':
                         document.getElementById('p1').innerHTML = 'En un mismo sistema planetario, había dos mundos habitados, cada uno con una especie dominante inteligente, tan diferentes entre si, que muchas guerras han ya luchado.';
                         document.getElementById('p2').innerHTML = 'Después de siglos de lucha, se dieron cuenta de que una especie debería partir para siempre, y una última batalla decidiría quién.';
@@ -103,6 +113,8 @@
                         document.getElementById('p7').innerHTML = 'Y este es sólo el primer desafío por el cual nuestro héroe tendrá que pasar para poder prevalecer.';
                         document.getElementById('b1').innerHTML = 'Saltar Introducción';
                         break;
+
+                    // French
                     case 'frances':
                         document.getElementById('p1').innerHTML = "Dans le même système planétaire, il y avait deux mondes habités, chacun avec une espèce dominant intelligent, tellement différent l'un d'autre, que plusieurs guerres ils ont combattu.";
                         document.getElementById('p2').innerHTML = "Après des siècles de lutte, ils ont réalisé qu'une espèce devrait partir pour toujours, et une dernière bataille déciderait qui.";
@@ -115,6 +127,7 @@
                         break;
                 }
             }
+            // End of adding texts according to the chosen language
         </script>
     </body>
 </html>

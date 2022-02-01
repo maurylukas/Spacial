@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <!-- Begin of import scripts -->
         <script type = "text/javascript" src = "static/js/fundo.js"></script>
         <script type = "text/javascript" src = "static/js/nave.js"></script>
         <script type = "text/javascript" src = "static/js/astro.js"></script>
@@ -9,45 +11,58 @@
         <script type = "text/javascript" src = "static/js/vida.js"></script>
         <script type = "text/javascript" src = "static/js/escudo.js"></script>
         <script type = "text/javascript" src = "static/js/chefe.js"></script>
+        <!-- End of import scripts -->
+        
         <link rel = "stylesheet" type = "text/css" href = "static/css/geral.css"/>
         <title>Spacial</title>
         <meta charset = "UTF-8"/>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0"/>
     </head>
     <body style = "background-image: url('static/img/galaxia2.jpg'); background-position: left top; background-repeat: repeat; background-size: cover; position: relative;">
+    
+        <!-- Begin of import audios -->
         <audio id = "musica" loop = "loop" preload = "auto">
-            <source src = "static/sg/StarTrek.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/StarTrek.mp3" type = "audio/mpeg"/>
         </audio>
         <audio id = "bum" preload = "auto">
-            <source src = "static/sg/explosao.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/explosao.mp3" type = "audio/mpeg"/>
         </audio>
         <audio id = "som" preload = "auto">
-            <source src = "static/sg/tiro.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/tiro.mp3" type = "audio/mpeg"/>
         </audio>
+        <!-- End of import audios -->
+        
+        <!-- Begin of page content -->
         <center>
             <h1>SPACIAL</h1>
             <br/>
-            <canvas id = "tela" style = "border: 1px solid #FFFF00;">Sem suporte a HTML5</canvas>
+            <canvas id = "tela" style = "border: 1px solid #FFFF00;">No HTML5 support</canvas>
             <br/>
             <button id = "botao" type = "button" onclick = "pausa ()" autofocus> Play </button>
             <button type = "button" onclick = "location.assign ('principal')"> Exit </button>
             <!-- <p>Autor: Maury Lukas</p> -->
         </center>
+        <!-- End of page content -->
+        
         <script>
+            // Loading canvas
             var canvas = document.getElementById ('tela');
             canvas.width = ((window.outerWidth + window.innerWidth) / 2 || (document.documentElement.offsetWidth + document.documentElement.clientWidth) / 2 || (document.body.offsetWidth + document.body.clientWidth) / 2) * 2 / 3; // em 1920 = 1280, em 1440 = 960, original = 975
             canvas.height = ((window.outerHeight + window.innerHeight) / 2 || (document.documentElement.offsetHeight + document.documentElement.clientHeight) / 2 || (document.body.offsetHeight + document.body.clientHeight) / 2) * 2 / 3; // em 1080 = 720 em 900 = 600, original = 600
             
             var contexto = canvas.getContext ('2d');
             var musica = document.getElementById ('musica');
-
+            
+            // Loading background
             var fundo = new Fundo ();
             fundo.sorteio ();
             fundo.desenhar ();
 
+            // Loading ship
             var nave = new Nave ();
             nave.desenhar ();
 
+            // Loading asteroids
             var quantidade = 1;
             var indiceAstro = 0;
             var astros = [];
@@ -56,6 +71,7 @@
                 astros [indiceAstro] = new Astro();
             }
 
+            // Loading shots
             var indiceTiro = 0;
             var tiros = [];
             for (indiceTiro = 0; indiceTiro < 3; indiceTiro ++)
@@ -63,12 +79,14 @@
                 tiros [indiceTiro] = new Tiro ();
             }
 
+            // Loading explosions
             var explosoes = [];
             for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
             {
                 explosoes [indiceAstro] = new Explosao ();
             }
 
+            // Loading lives
             var coracao = 1;
             var indiceVida = 0;
             var vidas = [];
@@ -77,6 +95,7 @@
                 vidas [indiceVida] = new Vida ();
             }
 
+            // Loading shields
             var circulo = 1;
             var indiceEscudo = 0;
             var escudos = [];
@@ -85,6 +104,7 @@
                 escudos [indiceEscudo] = new Escudo ();
             }
 
+            // Loading game over image
             var larguraOver = canvas.width / 3.333; // original = 384
             var alturaOver = canvas.height / 8.57; // original = 84
             var imagemOver = new Image ();
@@ -94,8 +114,10 @@
             };
             imagemOver.src = 'static/img/Game_Over.png';
 
+            // Loading final boss
             var chefe = new Chefe ();
 
+            // Loading game continue image
             var larguraContinua = canvas.width / 3.2; // original = 400
             var alturaContinua = canvas.height / 3.2; // original = 225
             var imagemContinua = new Image ();
@@ -105,47 +127,61 @@
             };
             imagemContinua.src = 'static/img/continue.png';
 
+            // Loading keydown listener
             document.addEventListener ('keydown', function (pressiona)
             {
+                // Pressing left key
                 if (pressiona.keyCode == 37)
                 {
                     nave.esquerda = true;
                 }
+
+                // Pressing right key
                 else if (pressiona.keyCode == 39)
                 {
                     nave.direita = true;
                 }
+
+                // Pressing ctrl key
                 else if (pressiona.keyCode == 17)
                 {
                     nave.atira = true;
                 }
             });
 
+            // Loading keyup listener
             document.addEventListener ('keyup', function (solta)
             {
+                // Releasing left key
                 if (solta.keyCode == 37)
                 {
                     nave.esquerda = false;
                 }
+
+                // Releasing right key
                 else if (solta.keyCode == 39)
                 {
                     nave.direita = false;
                 }
+
+                // Releasing ctrl key
                 else if (solta.keyCode == 17)
                 {
                     nave.atira = false;
                 }
             });
 
+            // Loading variables
             var inicio = false;
             var fim = false;
             var z = 0;
-            var vida = 3;
-            var ponto = 0;
+            var vida = 3; // initial lives
+            var ponto = 0; // initial score
             var anterior = 0;
-            var fonte = canvas.height / 36; // original = 20
-            var espera = 20;
+            var fonte = canvas.height / 36; // original = 20 // font size
+            var espera = 20; // shots delay
 
+            // Loading HUD image
             var larguraCoracao = canvas.width / 40; // original = 32
             var alturaCoracao = canvas.height / 24; // original = 30
             var imagemCoracao = new Image ();
@@ -155,33 +191,45 @@
             };
             imagemCoracao.src = 'static/img/heart.png';
 
+            // Loading HUD text
             contexto.font = fonte + 'px Arial';
             contexto.fillStyle = 'yellow';
 
+            // Loading game
             requestAnimationFrame (jogo);
 
+            // Begin of game loop function
             function jogo ()
             {
                 if (inicio)
                 {
+                    // Drawing game elements
                     desenha ();
 
+                    // Receiving keyboard inputs
                     teclado ();
 
+                    //Verifying collisions
                     colide ();
 
+                    // Drawing HUD
                     contexto.drawImage (imagemCoracao, z, z, larguraCoracao, alturaCoracao);
                     contexto.fillText ('x' + vida, larguraCoracao, fonte);
                     contexto.fillText ('Score: ' + ponto, canvas.width - fonte * 5, fonte);
 
+                    // Stopping game loop
                     if (fim || chefe.final)
                     {
                         para ();
                     }
+
+                    // Continuing game loop
                     else
                     {
+                        // Loading next frame
                         prepara ();
 
+                        // Hampering game
                         if (dificulta ())
                         {
                             astros [quantidade] = new Astro();
@@ -189,6 +237,7 @@
                             quantidade ++;
                         }
 
+                        // Expiring shield
                         if (nave.protecao)
                         {
                             nave.tempo ++;
@@ -197,27 +246,44 @@
                                 nave.protecao = false;
                             }
                         }
+
+                        // Delaying shots
                         espera ++;
+
+                        // Looping game
                         requestAnimationFrame (jogo);
                     }
                 }
             }
+            // End of game loop function
 
+            // Begin of game drawing function
             function desenha ()
             {
+                // Cleaning canvas
                 contexto.clearRect (z, z, canvas.width, canvas.height);
+
+                // Drawing background
                 fundo.proximo ();
                 fundo.desenhar ();
+
+                // Drawing ship
                 nave.desenhar ();
+
+                // Drawing final boss
                 if (chefe.chefe)
                 {
                     chefe.desenhar ();
                     chefe.proximo ();
                 }
+
+                // Drawing asteroids
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
                     astros [indiceAstro].desenhar();
                 }
+
+                // Drawing shots
                 for (indiceTiro = 0; indiceTiro < tiros.length; indiceTiro ++)
                 {
                     if (tiros [indiceTiro].tiro)
@@ -225,6 +291,8 @@
                         tiros [indiceTiro].desenhar ();
                     }
                 }
+
+                // Drawing explosions
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
                     if (explosoes [indiceAstro].explosao)
@@ -232,6 +300,8 @@
                         explosoes [indiceAstro].desenhar ();
                     }
                 }
+
+                // Drawing lives
                 for (indiceVida = 0; indiceVida < coracao; indiceVida ++)
                 {
                     if (vidas [indiceVida].vida)
@@ -239,6 +309,8 @@
                         vidas [indiceVida].desenhar ();
                     }
                 }
+
+                // Drawing shields
                 for (indiceEscudo = 0; indiceEscudo < circulo; indiceEscudo ++)
                 {
                     if (escudos [indiceEscudo].escudo)
@@ -247,17 +319,24 @@
                     }
                 }
             }
+            // End of game drawing function
 
+            // Begin of keyboard function
             function teclado ()
             {
+                // Going to the left
                 if (nave.esquerda)
                 {
                     nave.paraEsquerda ();
                 }
+
+                // Going to the right
                 if (nave.direita)
                 {
                     nave.paraDireita ();
                 }
+
+                // Shooting
                 if (nave.atira && espera >= 20)
                 {
                     for (indiceTiro = 0; indiceTiro < tiros.length; indiceTiro ++)
@@ -273,15 +352,19 @@
                     }
                 }
             }
+            // End of keyboard function
 
+            // Begin of collision function
             function colide ()
             {
+                // Collision between asteroid and shot
                 for (indiceTiro = 0; indiceTiro < tiros.length; indiceTiro ++)
                 {
                     if (tiros [indiceTiro].tiro)
                     {
                         for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                         {
+                            // Spawning explosion and bonus
                             if (colisaoTiro (astros [indiceAstro].destinoX + astros [indiceAstro].centro, astros [indiceAstro].destinoY + astros [indiceAstro].centro, astros [indiceAstro].raio, tiros [indiceTiro].posicaoX + tiros [indiceTiro].centroX, tiros [indiceTiro].posicaoY + tiros [indiceTiro].centroY, tiros [indiceTiro].raio))
                             {
                                 tiros [indiceTiro].tiro = false;
@@ -297,8 +380,11 @@
                         }
                     }
                 }
+
+                // Collision between asteroid and ship
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
+                    // Spawning explosion
                     if (colisaoNave (nave.posicao + nave.centroXElipse, nave.centroYElipse, nave.raioXElipse, nave.raioYElipse, astros [indiceAstro].destinoX + astros [indiceAstro].centro, astros [indiceAstro].destinoY + astros [indiceAstro].centro, astros [indiceAstro].raio))
                     {
                         explosoes [indiceAstro].destinoX = astros [indiceAstro].destinoX + astros [indiceAstro].centro - explosoes [indiceAstro].centro;
@@ -307,6 +393,8 @@
                         explosoes [indiceAstro].explosao = true;
                         document.getElementById ('bum').currentTime = 0.0;
                         document.getElementById ('bum').play ();
+
+                        // Verifying shield integrity
                         if (!nave.protecao)
                         {
                             vida --;
@@ -326,10 +414,13 @@
                         }
                     }
                 }
+
+                // Collision between life and ship
                 for (indiceVida = 0; indiceVida < coracao; indiceVida ++)
                 {
                     if (vidas [indiceVida].vida)
                     {
+                        // Collecting life
                         if (colisaoNave (nave.posicao + nave.centroXElipse, nave.centroYElipse, nave.raioXElipse, nave.raioYElipse, vidas [indiceVida].posicaoX + vidas [indiceVida].centroX, vidas [indiceVida].posicaoY + vidas [indiceVida].centroY, vidas [indiceVida].raio))
                         {
                             vidas [indiceVida].vida = false;
@@ -337,10 +428,13 @@
                         }
                     }
                 }
+
+                // Collision between shield and ship
                 for (indiceEscudo = 0; indiceEscudo < circulo; indiceEscudo ++)
                 {
                     if (escudos [indiceEscudo].escudo)
                     {
+                        // Collecting shield
                         if (colisaoNave (nave.posicao + nave.centroXElipse, nave.centroYElipse, nave.raioXElipse, nave.raioYElipse, escudos [indiceEscudo].posicaoX + escudos [indiceEscudo].centro, escudos [indiceEscudo].posicaoY + escudos [indiceEscudo].centro, escudos [indiceEscudo].raio))
                         {
                             escudos [indiceEscudo].escudo = false;
@@ -351,13 +445,16 @@
                     }
                 }
             }
+            // End of collision function
 
+            // Math between circles collision
             function colisaoTiro (x1, y1, r1, x2, y2, r2) //entre círculos
             {
                 var distancia = Math.sqrt (Math.pow (x1 - x2, 2) + Math.pow (y1 - y2, 2));
                 return distancia <= r1 + r2;
             }
 
+            // Math between ellipse and circle collision
             function colisaoNave (x1, y1, rx, ry, x2, y2, r2) //elipse e círculo
             {
                 var distancia = Math.sqrt (Math.pow (x1 - x2, 2) + Math.pow (y1 - y2, 2));
@@ -367,12 +464,16 @@
                 return distancia <= r1 + r2;
             }
 
+            // Begin of next frame function
             function prepara ()
             {
+                // Loading asteroids
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
                     astros [indiceAstro].proximo();
                 }
+
+                // Loading shots
                 for (indiceTiro = 0; indiceTiro < tiros.length; indiceTiro ++)
                 {
                     if (tiros [indiceTiro].tiro)
@@ -380,6 +481,8 @@
                         tiros [indiceTiro].proximo ();
                     }
                 }
+
+                // Loading explosions
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
                     if (explosoes [indiceAstro].explosao)
@@ -387,6 +490,8 @@
                         explosoes [indiceAstro].proximo ();
                     }
                 }
+
+                // Loading lives
                 for (indiceVida = 0; indiceVida < coracao; indiceVida ++)
                 {
                     if (vidas [indiceVida].vida)
@@ -394,6 +499,8 @@
                         vidas [indiceVida].proximo ();
                     }
                 }
+
+                // Loading shields
                 for (indiceEscudo = 0; indiceEscudo < circulo; indiceEscudo ++)
                 {
                     if (escudos [indiceEscudo].escudo)
@@ -402,31 +509,47 @@
                     }
                 }
             }
+            // End of next frame function
 
+            // Begin of game over function
             function para ()
             {
-
+                // Drawing game continue image
                 if (chefe.final)
                 {
                     contexto.drawImage (imagemContinua, (canvas.width - larguraContinua) / 2, (canvas.height - alturaContinua) / 2, larguraContinua, alturaContinua);
                 }
+
+                // Drawing game over image
                 else
                 {
                     contexto.drawImage (imagemOver, (canvas.width - larguraOver) / 2, (canvas.height - alturaOver) / 2, larguraOver, alturaOver);
                     explosoes [indiceAstro].desenhar ();
                     explosoes [indiceAstro].explosao = false;
                 }
+
+                // Resetting shots
                 for (indiceTiro = 0; indiceTiro < tiros.length; indiceTiro ++)
                 {
                     tiros [indiceTiro].tiro = false;
                 }
+
+                // Resetting backgroung
                 fundo.reinicio ();
+
+                // Resetting ship
                 nave.reinicio ();
+
+                // Resetting final boss
                 chefe.reinicio ();
+
+                // Resetting asteroids
                 for (indiceAstro = 0; indiceAstro < quantidade; indiceAstro ++)
                 {
                     astros [indiceAstro].reinicio ();
                 }
+
+                // Resetting variables
                 espera = 20;
                 anterior = 0;
                 quantidade = 1;
@@ -434,9 +557,13 @@
                 circulo = 1;
                 vida = 3;
                 ponto = 0;
+
+                // Pausing game loop
                 pausa ();
             }
+            // End of game over function
 
+            // Begin of hamper function
             function dificulta ()
             {
                 if (anterior == ponto)
@@ -502,6 +629,8 @@
                     case 98:
                         anterior = ponto;
                         return true;
+
+                    // Starting final boss
                     case 99:
                         anterior = ponto;
                         chefe.acabar ();
@@ -510,11 +639,15 @@
                         return false;
                 }
             }
+            // End of hamper function
 
+            // Begin of bonuses function
             function bonus ()
             {
+                // 5% chance of bonus
                 if (Math.random () < .05)
                 {
+                    // 50% chance of life
                     if (Math.random () <= 1 / 2)
                     {
                         for (indiceVida = 0; indiceVida < coracao; indiceVida ++)
@@ -537,6 +670,8 @@
                             }
                         }
                     }
+
+                    // 50% chance of shield
                     else
                     {
                         for (indiceEscudo = 0; indiceEscudo < circulo; indiceEscudo ++)
@@ -561,7 +696,9 @@
                     }
                 }
             }
+            // End of bonuses function
 
+            // Begin of game pause function
             function pausa ()
             {
                 if (musica.paused)
@@ -579,6 +716,7 @@
                     musica.pause ();
                 }
             }
+            // End of game pause function
         </script>
     </body>
 </html>

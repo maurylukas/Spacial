@@ -13,43 +13,56 @@ and open the template in the editor.
     </head>
     <body style = "background-image: url('static/img/galaxia7.png'); background-position: left top; background-repeat: repeat; background-size: cover; position: relative;" onload = "instru ()">
         <audio id = "som" preload = "auto" onended = "location.assign ('principal')">
-            <source src = "static/sg/switch2.mp3" type = "audio/mpeg"/>
+            <source src = "static/snd/switch2.mp3" type = "audio/mpeg"/>
         </audio>
         <center>
             <h2 id = "t1"></h2>
+
+            <!-- Left key image -->
             <h3>
                 <img src = "static/img/esq.png" alt = "left arrow" height = "65" width = "65" style = "vertical-align: middle;"/>
                 <img src = "static/img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
                 <span id = "p1"></span>
             </h3>
+
+            <!-- Right key image -->
             <h3>
                 <img src = "static/img/dir.png" alt = "right arrow" height = "65" width = "65" style = "vertical-align: middle;"/>
                 <img src = "static/img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
                 <span id = "p2"></span>
             </h3>
+
+            <!-- Ctrl key image -->
             <h3>
                 <img src = "static/img/ctrl.png" alt = "ctrl key" height = "59" width = "100" style = "vertical-align: middle;"/>
                 <img src = "static/img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
                 <span id = "p3"></span>
             </h3>
+
+            <!-- Heart image -->
             <h3>
                 <img src = "static/img/gloss.png" alt = "heart" height = "87" width = "96" style = "vertical-align: middle;"/>
                 <img src = "static/img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
                 <span id = "p4"></span>
             </h3>
+
+            <!-- Blue ball image -->
             <h3>
                 <img src = "static/img/bola_azul_aqua.png" alt = "blue ball" height = "90" width = "90" style = "vertical-align: middle;"/>
                 <img src = "static/img/equal.png" alt = "equals to" height = "19" width = "32" style = "vertical-align: middle;"/>
                 <span id = "p5"></span>
             </h3>
+
             <br/>
             <button type = "button" id = "b1"  onclick = "document.getElementById ('som').play ()"></button>
         </center>
         <script>
+            // Begin of adding texts according to the chosen language
             function instru ()
             {
                 switch (window.name)
                 {
+                    // Portuguese
                     default:
                         document.getElementById('t1').innerHTML = 'INSTRUÇÕES';
                         document.getElementById('p1').innerHTML = 'ESQUERDA';
@@ -59,6 +72,8 @@ and open the template in the editor.
                         document.getElementById('p5').innerHTML = 'ESCUDO';
                         document.getElementById('b1').innerHTML = 'Voltar para o Menu';
                         break;
+
+                    // English
                     case 'ingles':
                         document.getElementById('t1').innerHTML = 'INSTRUCTIONS';
                         document.getElementById('p1').innerHTML = 'LEFT';
@@ -68,6 +83,8 @@ and open the template in the editor.
                         document.getElementById('p5').innerHTML = 'SHIELD';
                         document.getElementById('b1').innerHTML = 'Back to Menu';
                         break;
+
+                    // German
                     case 'alemao':
                         document.getElementById('t1').innerHTML = 'ANLEITUNGEN';
                         document.getElementById('p1').innerHTML = 'LINKS';
@@ -77,6 +94,8 @@ and open the template in the editor.
                         document.getElementById('p5').innerHTML = 'SCHILD';
                         document.getElementById('b1').innerHTML = 'Zurück zum Menü';
                         break;
+
+                    // Italian
                     case 'italiano':
                         document.getElementById('t1').innerHTML = 'ISTRUZIONI';
                         document.getElementById('p1').innerHTML = 'SINISTRA';
@@ -86,6 +105,8 @@ and open the template in the editor.
                         document.getElementById('p5').innerHTML = 'SCUDO';
                         document.getElementById('b1').innerHTML = 'Tornare al Menu';
                         break;
+
+                    // Spanish
                     case 'espanhol':
                         document.getElementById('t1').innerHTML = 'INSTRUCCIONES';
                         document.getElementById('p1').innerHTML = 'IZQUIERDA';
@@ -95,6 +116,8 @@ and open the template in the editor.
                         document.getElementById('p5').innerHTML = 'BLINDAJE';
                         document.getElementById('b1').innerHTML = 'Volver al Menú';
                         break;
+
+                    // French
                     case 'frances':
                         document.getElementById('t1').innerHTML = 'INSTRUCTIONS';
                         document.getElementById('p1').innerHTML = 'GAUCHE';
@@ -106,6 +129,7 @@ and open the template in the editor.
                         break;
                 }
             }
+            // End of adding texts according to the chosen language
         </script>
     </body>
 </html>

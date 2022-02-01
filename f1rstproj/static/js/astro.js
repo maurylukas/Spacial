@@ -1,3 +1,4 @@
+// Begin of asteroid function
 function Astro ()
 {
     this.tamanhoOrigem = 50;
@@ -20,18 +21,22 @@ function Astro ()
     this.imagem.src = 'static/img/asteroides.png';
     this.desenhar = function ()
     {
+        // Drawing asteroid
         contexto.drawImage (this.imagem, this.origemX, this.origemY, this.tamanhoOrigem, this.tamanhoOrigem, this.destinoX, this.destinoY, this.tamanhoDestino, this.tamanhoDestino);
     };
     this.proximo = function ()
     {
+        // Loading next frame
         this.origemX += this.tamanhoOrigem;
         if (this.controle % 5 == 0)
         {
+            // Looping spritesheet
             this.origemX = 0;
             this.origemY += this.tamanhoOrigem;
         }
         else if (this.controle == 19)
         {
+            // Resetting spritesheet
             this.origemX = 0;
             this.origemY = 0;
             this.controle = 0;
@@ -39,6 +44,7 @@ function Astro ()
         this.destinoY -= this.velocidade;
         if (this.destinoY <= -this.tamanhoDestino)
         {
+            // Repositioning asteroid
             this.destinoY = canvas.height;
             this.destinoX = Math.floor (Math.random () * (canvas.width - this.tamanhoDestino));
         }
@@ -46,6 +52,7 @@ function Astro ()
     };
     this.reinicio = function ()
     {
+        // Resetting asteroid
         this.origemX = 0;
         this.origemY = 0;
         this.destinoY = canvas.height;
@@ -54,3 +61,4 @@ function Astro ()
         this.velocidade = Math.floor (Math.random() * (this.maximo - this.minimo + 1) + this.minimo);
     };
 }
+// End of asteroid function

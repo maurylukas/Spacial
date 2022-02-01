@@ -1,3 +1,4 @@
+// Begin of life function
 function Vida ()
 {
     this.vida = false;
@@ -17,14 +18,18 @@ function Vida ()
     this.imagem.src = 'static/img/gloss.png';
     this.desenhar = function ()
     {
+        // Drawing life
         contexto.drawImage (this.imagem, this.posicaoX, this.posicaoY, this.largura, this.altura);
     };
     this.proximo = function ()
     {
+        // Loading next frame
         this.posicaoY -= this.diferenca;
         if (this.posicaoY <= -this.altura)
         {
+            // Resetting life
             this.vida = false;
         }
     };
 }
+// End of life function
