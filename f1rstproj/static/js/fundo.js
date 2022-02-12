@@ -19,7 +19,7 @@ function Fundo ()
     this.sorteio = function ()
     {
         // Randomizing background
-        if (Math.random () <= 1 / 2)
+        if (Math.random () < 1 / 2)
         {
             this.imagem1.src = 'static/img/espaco2.png';
             this.imagem2.src = 'static/img/espaco4.png';
