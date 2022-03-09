@@ -61,7 +61,7 @@ and open the template in the editor.
             <p></p>
 
             <!-- Contact button -->
-            <button type = "button" onclick = "voltar ()">
+            <button type = "button" onclick = "contactar ()">
                 <img src = "static/img/idiomas_diferentes.jpg" alt = "Contact" height = "147" width = "126" style = "vertical-align: middle;"/>
                 <br/>
                 <b id = "p6"></b>
@@ -181,6 +181,13 @@ and open the template in the editor.
             {
                 document.getElementById ('som').play ();
                 document.getElementById ('som').onended = function () {location.assign ('/');};
+            }
+
+            // Contact function
+            function contactar ()
+            {
+                document.getElementById ('som').play ();
+                document.getElementById ('som').onended = function () {window.open ('https://maurylukas.herokuapp.com');};
             }
 
             // End of buttons' functions

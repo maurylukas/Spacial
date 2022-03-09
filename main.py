@@ -4,4 +4,4 @@ from f1rstproj import app
 
 # running website
 if __name__ == '__main__':
-    app.run (debug = True)
+    app.run ()
