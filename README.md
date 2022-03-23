@@ -1,4 +1,4 @@
-# Spacial
+# Spacial Game
  A starship game that runs on browsers
 
 https://spacialgame.herokuapp.com
