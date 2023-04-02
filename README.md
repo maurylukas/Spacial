@@ -1,7 +1,7 @@
 # Spacial Game
  A starship game that runs on browsers
 
-https://spacialgame.herokuapp.com
+https://spacialgame.onrender.com
 
 #### Multilanguage
  You can choose among 6 idioms to play
